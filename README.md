@@ -21,16 +21,16 @@ Also Red Teaming Toolkit
         32GB/8vCPUs/6TB-bandwidth/100GB-SSD
     - Tools:
     Dump lists of tools to automate a bash script & Install stuff (apt install & git clone)
-- CERTIFICADOS DIGITALES, DOMINIOS:
+- DOMAINS/DIGITAL CERTIFICATES:
 [crt.sh](http://crt.sh/) -> `https://crt.sh/?q=target.domain&output=json`
-(Se puede parsear pero hay que extraer el json raw)
-censys -> certificados digitales
+json extraction for parsing
+censys -> Digital Certs
 - [dnsdumpster](https://dnsdumpster.com/)
 Shodan
 - SCANNING:
 Funnel scanning:
     - masscan (Spray mass IP scan)
-    - nmap (Focused scan) (Usar Rustscan o threader3000)
+    - nmap (Focused scan) (Use Rustscan o threader3000)
 - SUBDOMAIN ENNUM:
     - webscreenshot,
     - [Photon](https://github.com/s0md3v/Photon) (Subdomain ennum, internal links, keys, etc.)
@@ -70,13 +70,13 @@ xvfb-run webscreenshot --no-xserver --renderer-binary $(which phantomjs) -s -r p
 
 ### SHODAN
 
-- Query: `org:"Equifax"` + -port:443 -port:80
+- Query: `org:"my_companyifax"` + -port:443 -port:80
 
 # Web Scanners
 
 Geekflare: Several security testing tools (Wordpress scans, TLS, etc.)
 
-[](https://gf.dev/)
+[Geekflare](https://gf.dev/)
 
 Net tools (Anonymous)
 
@@ -96,7 +96,7 @@ Google Dorking Automático
 
 *Auto scraping, auto Dorking,*
 
-[Website Analysis of blacktrust.net - Threat Intelligence Platform](https://threatintelligenceplatform.com/report/blacktrust.net/E8jfKOEzx5)
+[Website Analysis of domain.net - Threat Intelligence Platform](https://threatintelligenceplatform.com/report/domain.net/E8jfKOEzx5)
 
 Quick Recon
 
@@ -104,29 +104,28 @@ Quick Recon
 
 📍 Central Recon
 
-[IPv4Info - 209.182.202.96 ip address information.](http://ipv4info.com/ip-address/s31aa61/209.182.202.96.html/grupopicacho.com.mx/#_)
+[IPv4Info](http://ipv4info.com/ip-address)
 
 IPV4 Info (ASN, propietario, etc.)
 
-[](https://spyse.com/search?target=domain&query=blacktrust.net)
+[](https://spyse.com/search?target=domain&query=domain.net)
 
 *Domain, org, IP, AS, etc. fingerprinting*
 
-[Host: 104.22.36.154](https://www.threatminer.org/host.php?q=104.22.36.154#gsc.tab=0&gsc.q=104.22.36.154&gsc.page=1)
+[Threatminer (Host lookup)](https://www.threatminer.org/)
 
 Another central | OTX, etc.
 
 [](https://dnsdumpster.com/)
 
-DNS DUMPSTER (GOOD)
+DNS DUMPSTER
 
 [Threat Intelligence - Pulsedive](https://pulsedive.com/indicator/?ioc=YmxhY2t0cnVzdC5uZXQ=)
 
-Haven't tested it
 
 [ImmuniWeb® - Web and Mobile Security Testing, Application Penetration Testing, Security Ratings](https://www.immuniweb.com/)
 
-SSL TEST (BUENO, MEJOR QUE QUALYS Y CLI TOOL)
+SSL TEST
 
 ## WAF Bypassing & Info
 
@@ -135,7 +134,7 @@ SSL TEST (BUENO, MEJOR QUE QUALYS Y CLI TOOL)
 ## General Recon
 
 ```bash
-theHarvester -d bkbn.mx -b otx | httprobe | sed 's/.*:\/\///' | nslookup | grep 'name =' | awk '{print $NF}'
+theHarvester -d domain.com -b otx | httprobe | sed 's/.*:\/\///' | nslookup | grep 'name =' | awk '{print $NF}'
 ```
 
 ```bash
